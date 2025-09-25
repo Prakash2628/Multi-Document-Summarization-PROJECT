@@ -42,7 +42,7 @@ Here’s the folder structure after setup:
 
 project-root/
 │
-├── backend/                     # Backend (FastAPI / Flask / etc.)
+├── backend/                # Backend (FastAPI / Flask / etc.)
 │   ├── app/
 │   │   ├── file_processor.py
 │   │   ├── main.py
@@ -88,7 +88,7 @@ project-root/
 
 
 # Backend run Process
--> open new terminal and keep the front terminal don't remove it.
+-> open new terminal and keep the frontend terminal don't remove it.
 
 1.Run the command in that terminal:
 
