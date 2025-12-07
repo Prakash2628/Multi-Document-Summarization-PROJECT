@@ -34,7 +34,7 @@ This project delivers fast, clean, and actionable summaries with a developer-foc
 
 ---
 
-## 🖥️ Developer Preview (Dark Theme)
+## 🖥️ Developer Preview
 
 **Backend Terminal (example)**
 ```
