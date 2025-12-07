@@ -1,119 +1,189 @@
-# Multi-Document-Summarization-PROJECT
-This was about Summarizing the all type of Documents
+# 🚀 Multi-Document-Summarization-PROJECT
+AI-powered summarization engine that processes **multiple types of documents** — PDF, Word, TXT, and more — using a modern **React + FastAPI** full-stack architecture.
 
-#🚀 React App Starter
+This project delivers fast, clean, and actionable summaries with a developer-focused workflow and production-ready code structure.
 
-This repository contains a React starter project with a clean folder structure and some pre-configured files to help you get started quickly.
+---
 
-📦 Getting Started
-1. Create a React App
+## 📖 Overview
+**Multi-Document-Summarization-PROJECT** allows users to upload multiple documents or paste text and receive concise, AI-generated summaries with key points and actionable highlights. Built for researchers, students, analysts, and teams that need fast, readable insights.
 
-2. Make sure you have Node.js and npm (or yarn) installed. Then run:
+---
 
-  npx create-react-app your-project-name
-  
-  cd your-project-name
+## ✨ Features
+- Upload and summarize PDFs, DOCX, TXT and other text formats.
+- Combine multiple documents into one summary.
+- AI-powered backend for accurate, concise summaries.
+- Clean, responsive React UI with TailwindCSS and Framer Motion.
+- FastAPI backend with easily extensible endpoints.
 
-3. Replace / Add Files
+---
 
-  Once the app is created, replace the default files with the ones from this repository:
+## 🧰 Tech Stack
+**Frontend**
+- React
+- TailwindCSS
+- Framer Motion
+- Axios
 
-  Copy the contents of this repository into your folders.
+**Backend**
+- FastAPI
+- Python
+- Uvicorn
+- (Optional) OCR / Document parsing libraries
 
-  Overwrite existing files if prompted.
+---
 
-  Install dependencies (if any extra packages are listed in package.json):
+## 🖥️ Developer Preview (Dark Theme)
 
-  npm install
+**Backend Terminal (example)**
+```
+$ uvicorn app.main:app --reload --port 8000
+INFO:     Uvicorn running on http://localhost:8000
+INFO:     Application startup complete.
+```
 
-3. Run the App
+**Sample API request**
+```
+POST http://localhost:8000/summarize
+Content-Type: multipart/form-data
+Form fields:
+ - files[]: document.pdf
+ - text: optional additional text
+```
 
-  Start the development server:
+**Sample response**
+```json
+{
+  "summary": "This document provides an overview of ...",
+  "highlights": [
+    "Key point 1",
+    "Key point 2",
+    "Recommended action"
+  ]
+}
+```
 
-  npm start
+---
 
+## 📂 Full Project Structure
 
-#The app will run on http://localhost:3000
- 🎉
-
-#📂 Folder Structure
-
-Here’s the folder structure after setup:
-
+```
 project-root/
 │
-├── backend/                # Backend (FastAPI / Flask / etc.)
-│   ├── app/
+├── backend/                                # FastAPI backend
+│   ├── app/                        
+│   │   ├── main.py               
 │   │   ├── file_processor.py
-│   │   ├── main.py
 │   │   ├── schemas.py
 │   │   └── summarizer.py
-│   │
+│   │            
 │   ├── model/
 │   │   └── response_models.py
 │   │
-│   ├── venv/                    # Virtual environment
-│   ├── requirements.txt         # Python dependencies
-│   ├── .env.example             # Example environment variables
-│   └── __pycache__/             # Auto-generated cache
+│   ├── requirements.txt
+│   └── .env.example
 │
-├── frontend/                    # Frontend (React)
+├── frontend/                                # React frontend
 │   ├── public/
-│   │   ├── favicon.ico
+│   │   ├── MSD.ico
 │   │   ├── index.html
 │   │   ├── manifest.json
-│   │   └── robots.txt
 │   │
 │   ├── src/
-│   │   ├── components/          # Reusable React components
+│   │   ├── components/
 │   │   │   ├── DocumentSummarizer.jsx
 │   │   │   ├── FileUpload.jsx
 │   │   │   ├── SummaryResults.jsx
 │   │   │   └── TextInput.jsx
 │   │   │
-│   │   ├── services/            # API calls and utilities
+│   │   ├── services/
 │   │   │   └── api.js
 │   │   │
+│   │   ├── types/
+│   │   │   └── index.js
+│   │   │
 │   │   ├── App.js
-│   │   ├── index.js
-│   │   ├── App.css
 │   │   └── index.css
 │   │
 │   ├── package.json
-│   └── node_modules/
+│   └── postcss.config.js
 │
 ├── .gitignore
-├── README.md
-└── LICENSE
+└── README.md
+```
 
+## 🛠️ Installation
 
-# Backend run Process
--> open new terminal and keep the frontend terminal don't remove it.
+### 1. Frontend setup
+```bash
+cd frontend
+npm install
+```
 
-1.Run the command in that terminal:
+### 2. Backend setup
+```bash
+cd ../backend
+python -m venv venv
+# Activate venv (macOS / Linux)
+source venv/bin/activate
+# or Windows:
+# .\venv\Scripts\activate
+pip install -r requirements.txt
+```
 
-pip install requirements.txt
+---
 
-2.Activate the venv:
+## ▶️ Running the App (Development)
 
-.\venv\Scripts\activate
-
-3.Then the backend :
-
+**Start the backend**
+```bash
+cd backend
+.venv/Scripts/Activate
 uvicorn app.main:app --reload --port 8000
+```
 
-#Backend is Ready 😍
+**Start the frontend (in a separate terminal)**
+```bash
+cd frontend
+npm start
+```
 
-🛠️ Available Scripts
+Open:
+- Frontend: `http://localhost:3000`
+- Backend: `http://localhost:8000`
 
-In the project directory, you can run:
+---
 
-npm start – Runs the app in development mode.
+## 📘 API Documentation
 
-✨ Features
+FastAPI provides automatic docs:
 
-Clean and organized folder structure
+- Swagger UI: `http://localhost:8000/docs`
+- Redoc: `http://localhost:8000/redoc`
 
-Ready-to-use React setup
+### Example endpoints
+- `GET /health` — health check
+- `POST /summarize` — accept files + optional text, return summary
 
-Easy to customize and extend
+---
+
+## 🧪 Testing
+
+**Backend tests**
+```bash
+cd backend
+pytest
+```
+
+**Frontend tests**
+```bash
+cd frontend
+npm test
+```
+
+---
+
+## 🤝 Finally
+
+Project is ready...
