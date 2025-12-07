@@ -1,5 +1,5 @@
 # 🚀 Multi-Document-Summarization-PROJECT
-AI-powered summarization engine that processes **multiple types of documents** — PDF, Word, TXT, and more — using a modern **React + FastAPI** full-stack architecture.
+Summarization engine that processes **multiple types of documents** — PDF, Word, TXT, and more — using a modern **React + FastAPI** full-stack architecture.
 
 This project delivers fast, clean, and actionable summaries with a developer-focused workflow and production-ready code structure.
 
